@@ -1,0 +1,35 @@
+{
+  "name": "order-management-system",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "start": "concurrently \"yarn:build\" \"yarn:serve\"",
+    "build": "tsc",
+    "serve:dev": "nodemon dist/index.js",
+    "serve": "node dist/index.js",
+    "start:dev": "concurrently \"yarn:build\" \"yarn:serve:dev\" \"yarn:start:oms:dev\" \"yarn:start:inventory:dev\"",
+    "start:oms:dev": "cd apps/oms-ms && yarn start:dev",
+    "start:oms:prod": "cd apps/oms-ms && yarn start",
+    "start:inventory:dev": "cd apps/inventory-ms && yarn start:dev",
+    "start:inventory:prod": "cd apps/inventory-ms && yarn start",
+    "build:libs": "cd libs && yarn build"
+  },
+  "workspaces": [
+    "libs/*",
+    "apps/*"
+  ],
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  },
+  "dependencies": {
+    "@types/cors": "^2.8.14",
+    "@types/express-http-proxy": "^1.6.4",
+    "@types/helmet": "^4.0.0",
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "express-http-proxy": "^2.0.0",
+    "helmet": "^7.0.0"
+  }
+}

@@ -1,0 +1,10 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.ERROR = exports.SUCCESS = exports.INTERNAL_SERVER_ERROR_CODE = exports.NOT_FOUND_CODE = exports.BAD_REQUEST_CODE = exports.CREATED_CODE = exports.SUCCESS_CODE = void 0;
+exports.SUCCESS_CODE = 200;
+exports.CREATED_CODE = 201;
+exports.BAD_REQUEST_CODE = 400;
+exports.NOT_FOUND_CODE = 404;
+exports.INTERNAL_SERVER_ERROR_CODE = 500;
+exports.SUCCESS = 'success';
+exports.ERROR = 'error';
